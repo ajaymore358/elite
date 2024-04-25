@@ -1,0 +1,157 @@
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    align-items: center; 
+    background-color: #EBECED; 
+    overflow: hidden;
+    font-family: "Frank Ruhl Libre", serif;
+     background: radial-gradient(circle at center, #ff9999 0%, #66b3ff 70%);
+}
+.content{
+    display: flex;
+    justify-content: center;
+}
+.sphere , .light{
+    display: block;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(
+        circle at 10% 30% , #fff, rgba(192,192,196,0.75)
+    ) ;
+    box-shadow: 
+    0 0 20px 5px #fff,
+    0 0 50px rgb(150, 150, 150,0.5),
+    inset -5px -18px 10px -15px rgb(255, 255, 255,0.4), 
+    inset 5px 5px 12px -5px rgb(255, 255, 255,0.5), 
+    inset 5px 5px 12px -5px rgb(255, 255, 255,0.8),
+    -50px -20px 80px -5px  #fff,
+    0 0 500px 150px rgb(224, 223, 277,0.50);
+ } 
+.light{
+    border: none;
+    background: transparent;
+    box-shadow: 
+    -9px 0 5px -6px #fff,
+    -9px 0 2px -6px #fff,    
+    inset 9px 0 5px -6px #fff, 
+    inset 15px 0 15px -9px rgba(255,255,255,0.5), 
+     -20px 0 15px -7px rgba(255,255,255,0.8), 
+     -40px 0 60px -10px rgba(255,255,255,0.8);
+}
+
+@-webkit-keyframes rotating{
+    from{-webkit-transform: rotate(0deg);}
+    to{-webkit-transform: rotate(360deg);} 
+}
+.rotate{
+    -webkit-animation: rotating 2s linear infinite;
+}
+.explode {
+    animation: explosion 1s ease forwards, fadeOut 1s ease forwards;
+}
+@keyframes explosion {
+    0% {
+        width: 100px;
+        height: 100px;
+        opacity: 1;
+    }
+    25% {
+        width: 150px;
+        height: 150px;
+        opacity: 0.8;
+    }
+    50% {
+        width: 200px;
+        height: 200px;
+        opacity: 0.5;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* ///Logo animation */
+.logDiv {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+h1 {
+    font-size: 2.5em;
+    letter-spacing: -4px;
+    font-weight: 700;
+    font-family: "Frank Ruhl Libre", serif;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.sphere.fade-out {
+    box-shadow: 
+    0 0 20px 5px rgba(255, 255, 255, 0),
+    0 0 50px rgba(150, 150, 150, 0),
+    inset -5px -18px 10px -15px rgba(255, 255, 255, 0), 
+    inset 5px 5px 12px -5px rgba(255, 255, 255, 0), 
+    inset 5px 5px 12px -5px rgba(255, 255, 255, 0),
+    -50px -20px 80px -5px rgba(255, 255, 255, 0),
+    0 0 500px 150px rgba(224, 223, 277, 0);
+}
+
+.cssanimation, .cssanimation span {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+}
+
+.cssanimation span { display: inline-block }
+
+.leFadeInLeft span { animation-name: leFadeInLeft }
+@keyframes leFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to { opacity: 1 }
+}
+@keyframes explosion {
+    0% {
+        width: 50px;
+        height: 50px;
+        opacity: 1;
+    }
+    100% {
+        width: 500px;
+        height: 500px;
+        opacity: 0;
+    }
+}
+.loader {
+    font-size: 20px;  
+    position: fixed;
+    bottom: 20px;   
+}  
